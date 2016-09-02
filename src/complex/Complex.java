@@ -31,5 +31,10 @@ public class Complex {
 		this.real = a.getReal() + b.getReal();
 		this.img = a.getImg() + b.getImg();
 	}
+	public void resta(Complex a, Complex b)
+	{
+		this.real= a.getReal() - b.getReal();
+		this.img = a.getImg() - b.getImg();
+	}
 
 }

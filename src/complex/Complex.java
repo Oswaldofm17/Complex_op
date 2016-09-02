@@ -36,5 +36,10 @@ public class Complex {
 		this.real= a.getReal() - b.getReal();
 		this.img = a.getImg() - b.getImg();
 	}
-
+	//(a.r + a.i) · (b.r + b.i) = (a.r*b.r − a.i*b.i) + (a.r*b.i + a.i*b.r)i
+	public void mult(Complex a, Complex b)
+	{
+		this.real = a.getReal()*b.getReal() - a.getImg()*b.getImg();
+		this.img = a.getReal()*b.getImg() + a.getImg()*b.getReal();
+	}
 }

@@ -25,14 +25,20 @@ public class Main {
 		System.out.println("Ingresa el segundo numero imaginario: ");
 		complejo2.setImg(scan.nextInt());
 		//Muestra ambos números
-		System.out.println("Primer número complejo: " + complejo1.getReal()+ " + "+ complejo1.getImg()+"i");
-		System.out.println("Segundo número complejo: " + complejo2.getReal()+ " + "+ complejo2.getImg()+"i");
+		if(complejo1.getImg()<0)
+			System.out.println("Primer número complejo: " + complejo1.getReal()+ " "+ complejo1.getImg()+"i");
+		else
+			System.out.println("Primer número complejo: " + complejo1.getReal()+ " + "+ complejo1.getImg()+"i");
+		if(complejo2.getImg()<0)
+			System.out.println("Segundo número complejo: " + complejo2.getReal()+ " "+ complejo2.getImg()+"i");
+		else
+			System.out.println("Segundo número complejo: " + complejo2.getReal()+ " + "+ complejo2.getImg()+"i");
 		//Toma de decision
 		do
 		{
-		System.out.println("Qué operación desea realizar?\n 1) Suma\n2)Resta");
+		System.out.println("Qué operación desea realizar?\n1) Suma\n2) Resta\n3) Multiplicación");
 		opcion = scan.nextInt();
-		}while(opcion > 2 || opcion < 1);
+		}while(opcion > 3 || opcion < 1);
 		switch(opcion)
 		{
 			case 1:
@@ -53,6 +59,16 @@ public class Main {
 					System.out.println("La resta es = " + complejo3.getReal() + " " + complejo3.getImg() + "i");
 				else
 					System.out.println("La resta es = " + complejo3.getReal() + " + " + complejo3.getImg() + "i");
+				break;
+			}
+			case 3:
+			{
+				//Suma de complejos
+				complejo3.mult(complejo1, complejo2);
+				if(complejo3.getImg()<0)
+					System.out.println("La multiplicación es = " + complejo3.getReal() + " " + complejo3.getImg() + "i");
+				else
+					System.out.println("La multiplicación es = " + complejo3.getReal() + " + " + complejo3.getImg() + "i");
 				break;
 			}
 		}
